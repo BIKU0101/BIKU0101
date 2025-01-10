@@ -1,15 +1,9 @@
-##############################################################################
-# Copyright (C) Anas Yuesef <me@anasov.ly> - All Rights Reserved             #
-# Unauthorized copying of this file, via any medium is strictly prohibited   #
-# Proprietary and confidential                                               #
-##############################################################################
-# Written by Anas Yuesef <me@anasov.ly>, 05, May, 2024.                      #
-##############################################################################
+
 
 import requests
 
 
-class CPMNuker:
+class BIKU0101:
 
     
     def login(self, email, password) -> int:
