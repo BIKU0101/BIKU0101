@@ -8,7 +8,6 @@
 
 import requests
 
-__ENDPOINT_URL__: str = "https://cpmnuker.anasov.ly/api"
 
 class CPMNuker:
 
