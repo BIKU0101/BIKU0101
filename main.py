@@ -1,13 +1,5 @@
-##############################################################################
-# Copyright (C) Anas Yuesef <me@anasov.ly> - All Rights Reserved             #
-# Unauthorized copying of this file, via any medium is strictly prohibited   #
-# Proprietary and confidential                                               #
-##############################################################################
-# Written by Anas Yuesef <me@anasov.ly>, 05, May, 2024.                      #
-##############################################################################
-
 import random
-import cpmnuker
+import BIKU0101
 import base64
 from time import sleep
 import os, signal, sys
