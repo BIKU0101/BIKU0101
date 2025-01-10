@@ -66,7 +66,6 @@ def load_player_data(cpm):
 def load_key_data(cpm):
     data = cpm.get_key_data()
     console.print("[bold][red]========[/red][ ACCESS KEY DETAILS ][red]========[/red][/bold]")
-    console.print(f"[bold green]Access Key [/bold green]: { data.get('access_key') }.")
     console.print(f"[bold green]Telegram ID[/bold green]: { data.get('telegram_id') }.")
     console.print(f"[bold green]Credits    [/bold green]: { (data.get('coins') if not data.get('is_unlimited') else 'Unlimited') }.", end="\n\n")
 
@@ -102,9 +101,8 @@ if __name__ == "__main__":
         banner(console)
         acc_email = prompt_valid_value("[bold][?] Account Email[/bold]", "Email", password=False)
         acc_password = prompt_valid_value("[bold][?] Account Password[/bold]", "Password", password=False)
-        acc_access_key = prompt_valid_value("[bold][?] Access Key[/bold]", "Access Key", password=False)
         console.print("[bold cyan][%] Trying to Login[/bold cyan]: ", end=None)
-        cpm = cpmnuker.CPMNuker(acc_access_key)
+        cpm = cpmnuker.CPMNuker
         login_response = cpm.login(acc_email, acc_password)
         if login_response != 0:
             if login_response == 100:
@@ -113,10 +111,6 @@ if __name__ == "__main__":
                 continue
             elif login_response == 101:
                 console.print("[bold red]WRONG PASSWORD (✘)[/bold red].")
-                sleep(2)
-                continue
-            elif login_response == 103:
-                console.print("[bold red]INVALID ACCESS KEY (✘)[/bold red].")
                 sleep(2)
                 continue
             else:
@@ -184,7 +178,7 @@ if __name__ == "__main__":
                 console.print("[bold cyan][!] Insert how much coins do you want.[/bold cyan]")
                 amount = IntPrompt.ask("[bold][?] Amount[/bold]")
                 console.print("[bold cyan][%] Saving your data[/bold cyan]: ", end=None)
-                if amount > 0 and amount <= 90000:
+                if amount > 0 and amount <= 50000000:
                     if cpm.set_player_coins(amount):
                         console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
                         console.print("==================================")
@@ -455,7 +449,7 @@ if __name__ == "__main__":
                 console.print("[bold cyan][!] Insert how much races you lose.[/bold cyan]")
                 amount = IntPrompt.ask("[bold][?] Amount[/bold]")
                 console.print("[bold cyan][%] Changing your data[/bold cyan]: ", end=None)
-                if amount > 0 and amount <= 999:
+                if amount > 0 and amount <= 999999999:
                     if cpm.set_player_loses(amount):
                         console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
                         console.print("==================================")
